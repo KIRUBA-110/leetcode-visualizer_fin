@@ -51,7 +51,7 @@ export interface UsePyodideReturn {
 function loadPyodideScript(): Promise<void> {
     return new Promise((resolve, reject) => {
         // Check if already loaded
-        if (window.loadPyodide) {
+        if (typeof window.loadPyodide !== 'undefined') {
             resolve();
             return;
         }
